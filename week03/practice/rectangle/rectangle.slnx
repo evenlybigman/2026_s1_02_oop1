@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="rectangle.vcxproj" Id="2afcd442-9599-4620-ac5d-9071ee30be67" />
+</Solution>
