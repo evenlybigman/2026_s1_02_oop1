@@ -19,5 +19,5 @@ int main() {
 	for (int i = 0; i < 3; i++) {
 		cout << Circles[i].getArea() << "\t";
 	}
-	return;
+	return 0;
 }
