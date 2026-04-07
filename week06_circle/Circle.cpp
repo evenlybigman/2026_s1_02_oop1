@@ -21,6 +21,10 @@ Circle::Circle(int radius) {
 	cout << "생성자 실행 " << radius << endl;
 }
 
+Circle::Circle() {
+	cout << "생성자 소멸" << radius << endl;
+}
+
 double Circle::getArea() {
 	return 3.14 * radius * radius;
 }
