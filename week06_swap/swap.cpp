@@ -1,11 +1,11 @@
 ﻿#include <iostream>
 using namespace std;
 
-void swap(int* swapA, int* swapB) {
+void swap(int& swapA, int& swapB) {
 	int tmp;
-	tmp = *swapA;
-	*swapA = *swapB;
-	*swapB = tmp;
+	tmp = swapA;
+	swapA = swapB;
+	swapB = tmp;
 }
 
 int main() {
@@ -16,8 +16,8 @@ int main() {
 	cout << "B의 값 입력: ";
 	cin >> n;
 
-	swap(&m, &n);
-	cout << m << "\t" << n << endl;
+	swap(m, n);
+	cout << "A의 값: "<< m << "\tB의 값: " << n << endl;
 
 	return 0;
 }
