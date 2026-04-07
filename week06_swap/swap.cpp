@@ -15,7 +15,9 @@ int main() {
 	cin >> m;
 	cout << "B의 값 입력: ";
 	cin >> n;
+
 	swap(&m, &n);
 	cout << m << "\t" << n << endl;
+
 	return 0;
 }
