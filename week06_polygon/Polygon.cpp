@@ -14,7 +14,7 @@ Polygon::~Polygon() {
 }
 
 void Polygon::read() {
-	cout << "아래의 x, y 값으로" << size << "개의 점을 입력하세요." << endl;
+	cout << "아래의 x, y 값으로 " << size << "개의 점을 입력하세요." << endl;
 	for (int i = 0; i < size; i++) {
 		cin >> xlist[i] >> ylist[i];
 	}
