@@ -3,12 +3,13 @@
 using namespace std;
 
 int main() {
-	string cmpX, cmpY;
-	cout << "첫 번째 문자열을 입력하세요>>";
-	cin >> cmpX;
-	cout << "두 번째 문자열을 입력하세요>>";
-	cin >> cmpY;
-	if (cmpX == cmpY)
-		cout << "Yes";
-	else cout << "No";
+	char buf[100];
+	while (1) {
+		if (strcmp(buf, "OK") == 0) {
+			cout << "종료합니다.";
+			break;
+		}
+		cout << "끝내려면 OK를 입력하세요>>";
+		cin.getline(buf, 100);
+	}
 }
