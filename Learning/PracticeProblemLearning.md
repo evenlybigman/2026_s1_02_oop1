@@ -1,4 +1,4 @@
-# chap2
+# chap 2
 
 
 
@@ -8,7 +8,7 @@ strcmp 인수
 
 탭('\t')은 위치 정렬을 해준다
 
-# chap4
+# chap 4
 
 ### 4-3
 
@@ -45,3 +45,91 @@ Book* Library::mostExpensive() {
 }
 ```
 
+# Chap 5
+
+### 5-3
+
+매개 변수들의 반지름 값을 더하는 addBubble 함수
+
+``` c++
+#include <iostream>
+using namespace std;
+
+class Bubble {
+	int radius;
+public:
+	Bubble(int radius) { this->radius = radius; }
+	int getRadius() { return radius; }
+	void setRadius(int n) { radius = n; }
+};
+
+void addBubble(Bubble& a, Bubble b, Bubble c) {
+	a.setRadius((a.getRadius() + b.getRadius() + c.getRadius()));
+}
+
+int main() {
+	Bubble a(5), b(10), c(130);
+	addBubble(c, a, b);
+	cout << "버블 c의 반지름 " << c.getRadius() << endl;
+}
+```
+
+setRadius는 int n을 받지만 int를 반환하는 함수들의 덧셈을 매개변수로 주었다.
+
+### 5-9
+
+``` c++
+#include <iostream>
+using namespace std;
+
+class MyStack {
+	int p[10];
+	int tos = 0;
+public:
+	MyStack();
+	bool push(int n);
+	bool pop(int& n);
+};
+
+MyStack::MyStack() {};
+
+bool MyStack::push(int n) {
+	if (this->tos >= 10) {
+		return false;
+	}
+	else{
+		p[this->tos++] = n;
+		return true;
+	}
+}
+
+bool MyStack::pop(int& n) {
+	if (tos <= 0) {
+		return false;
+	}
+	else {
+		tos--;
+		n = this->p[tos];
+		return true;
+	}
+}
+
+int main() {
+	MyStack st;
+	for (int i = 0; i < 11; i++) {
+		if (st.push(i)) cout << i << ' ';
+		else cout << endl << i + 1 << "번째 푸시 실패! 스택 차 있음" << endl;
+	}
+	int n;
+	for (int i = 0; i < 11; i++) {
+		if (st.pop(n)) cout << n << ' ';
+		else cout << endl << i + 1 << "번째 팝 실패! 스택이 비어 있음" << endl;
+	}
+}
+```
+
+클래스를 이용한 스택 구현
+
+첫 시도 컴파일에러
+
+push와 pop 구현 다시 연습 해볼 것
